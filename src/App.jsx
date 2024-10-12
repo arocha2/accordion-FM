@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Accordion } from "./components/Accordion";
+//img
 import headerImg from "../src/assets/images/background-pattern-desktop.svg";
 import headerMobileImg from "../src/assets/images/background-pattern-mobile.svg";
-import { useEffect } from "react";
+//data
+import data from "../src/data/data.json";
 
 export const App = () => {
+  //responsive header inicio
   const [imageSrc, setImageSrc] = useState("");
 
   const updateImage = () => {
     const width = window.innerWidth;
-
-    console.log("first");
 
     if (width < 600) {
       setImageSrc(headerMobileImg); // Ruta de la imagen para pantallas pequeñas
@@ -26,11 +28,12 @@ export const App = () => {
       window.removeEventListener("resize", updateImage);
     };
   }, []);
+  // responsive header fin
 
   return (
-    <main className="w-full h-[100vh]">
-      <img className="w-full" src={imageSrc} alt="header-img" />
-      App
+    <main className="w-full h-[100vh] flex flex-col items-center font-workSans relative bg-Light-pink">
+      <img className="w-full sm:max-h-[30%]" src={imageSrc} alt="header-img" />
+      <Accordion data={data} />
     </main>
   );
 };

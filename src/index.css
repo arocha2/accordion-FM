@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: workSans ;
-    src: url(../src/assets/fonts/WorkSans-VariableFont_wght.ttf);
+    font-family: "workSans" ;
+    src: url(../src/assets/fonts/static/WorkSans-Regular.ttf);
+}
+@font-face {
+    font-family: "workSansBold" ;
+    src: url(../src/assets/fonts/static/WorkSans-Bold.ttf);
 }

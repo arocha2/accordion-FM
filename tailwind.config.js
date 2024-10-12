@@ -3,7 +3,10 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily: ["workSans"],
+      fontFamily: {
+        workSans: ["workSans"],
+        workSansBold: ["workSansBold"],
+      },
       colors: {
         "Light-pink": "hsl(275, 100%, 97%)",
         "Grayish-purple": "hsl(292, 16%, 49%)",
